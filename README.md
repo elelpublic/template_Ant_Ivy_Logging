@@ -1,2 +1,5 @@
-# templateAntIvy
-Template for a java project using ant and ivy.
+# template_Ant_Ivy_Logging
+
+A sample projectile with logging.
+
+Based on https://github.com/elelpublic/template_Ant_Ivy

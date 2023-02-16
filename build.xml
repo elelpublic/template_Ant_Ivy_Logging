@@ -51,6 +51,10 @@
             <classpath>
                 <pathelement location="lib/commons-lang3-${commons-lang3.version}.jar" />
                 <pathelement location="lib/commons-cli-${commons-cli.version}.jar" />
+                <pathelement location="lib/log4j-api-${log4j.version}.jar" />
+                <pathelement location="lib/log4j-core-${log4j.version}.jar" />
+                <pathelement location="lib/slf4j-api-${slf4j.version}.jar" />
+                <pathelement location="lib/log4j-slf4j2-impl-${log4j.version}.jar" />
             </classpath>
         </javac>
     </target>
@@ -75,12 +79,17 @@
         <java
             classpath="target/classes"
             classname="com.infodesire.sample.Main"
+            fork="true"
             >
             <arg line="${commandline}" />
 
             <classpath>
                 <pathelement location="lib/commons-lang3-${commons-lang3.version}.jar" />
                 <pathelement location="lib/commons-cli-${commons-cli.version}.jar" />
+                <pathelement location="lib/log4j-api-${log4j.version}.jar" />
+                <pathelement location="lib/log4j-core-${log4j.version}.jar" />
+                <pathelement location="lib/slf4j-api-${slf4j.version}.jar" />
+                <pathelement location="lib/log4j-slf4j2-impl-${log4j.version}.jar" />
             </classpath>
         </java>
     </target>
