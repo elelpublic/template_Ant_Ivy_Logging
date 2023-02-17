@@ -8,6 +8,8 @@ import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.lang3.SystemUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -15,9 +17,19 @@ import java.util.List;
 
 public class Main {
 
+  static {
+    System.setProperty( "log4j2.configurationFile", "src/main/conf/log4j2.xml" );
+  }
+
+  private static Logger loggerMain = LoggerFactory.getLogger( "main" );
+  private static Logger loggerAll = LoggerFactory.getLogger( "all" );
+
   private static Options options;
 
-  public static int main( String... args ) throws IOException, ParseException {
+  public static void main( String... args ) throws IOException, ParseException {
+
+    loggerAll.info( "Logging to file target/main.log" );
+    loggerMain.info( "App startup" );
 
     print( "Demo 1.0" );
     print( "Running as " + SystemUtils.getUserName() + "@" + InetAddress.getLocalHost().getHostName() );
@@ -32,7 +44,7 @@ public class Main {
 
     if( argslist.isEmpty() ) {
       showUsage( "No command given." );
-      return 1;
+      return;
     }
 
     String command = argslist.get( 0 );
@@ -61,7 +73,7 @@ public class Main {
       }
     }
 
-    return 0;
+    loggerMain.info( "App shutdown" );
 
   }
   

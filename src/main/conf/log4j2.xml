@@ -4,12 +4,12 @@
 
     <Appenders>
 
-        <Console name="Console" target="SYSTEM_OUT">
+        <Console name="all" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
 
-        <RollingFile name="app"
-             fileName="target/app.log"
+        <RollingFile name="main"
+             fileName="target/main.log"
              filePattern="target/app.log.%i">
             <PatternLayout pattern="%-5p %d{yyyy-MM-dd HH:mm:ss} %m%n"/>
             <Policies>
@@ -22,13 +22,13 @@
 
     <Loggers>
         <Root level="warn">
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="all"/>
         </Root>
-        <Logger level="info" name="Console">
-            <AppenderRef ref="Console"/>
+        <Logger level="info" name="all">
+            <AppenderRef ref="all"/>
         </Logger>
-        <Logger level="debug" name="app">
-            <AppenderRef ref="app"/>
+        <Logger level="debug" name="main">
+            <AppenderRef ref="main"/>
         </Logger>
     </Loggers>
 
