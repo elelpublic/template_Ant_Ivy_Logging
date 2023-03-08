@@ -55,6 +55,7 @@
                 <pathelement location="lib/log4j-core-${log4j.version}.jar" />
                 <pathelement location="lib/slf4j-api-${slf4j.version}.jar" />
                 <pathelement location="lib/log4j-slf4j2-impl-${log4j.version}.jar" />
+                <pathelement location="lib/junit-${junit.version}.jar" />
             </classpath>
         </javac>
     </target>
